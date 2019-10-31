@@ -49,3 +49,15 @@ body{
     justify-content:space-between;
     margin: 0% 3rem; 
 }
+.displayRates{
+    margin: 2rem 3rem 0rem 3rem;
+    display: none;
+}
+/* .verticalLine {
+    border-width: 1rem;
+    border-left: thick solid #ff0000;
+  } */
+.profitMargin{
+    margin: 2rem 3rem 0rem 3rem;
+    display: none;
+  }
