@@ -43,51 +43,73 @@
         <div class="" id="wrapper">
             <div class="projectDetails ml-5 mr-5">
                 <h4 class="m-0">PROJECT DEMO test</h4>
-                <h6 class="m-0">Client A</h6>
+                <h6 class="m-0"><b>Client A</b></h6>
                 <p class="m-0">Ends on 30 2019</p>
             </div>
             <hr />
             <div class="uploadRates">
                 <div class="">
-                    <h4 style='color: lightblue;'>RATES</h4>
+                    <h4 style='color: #144D7F;'>Profit Margin</h4>
                     <p>Upload the rates for the job titles.</p>
                 </div>
-                <div class="">
-                    <label for="upload-file" class="btn btn-info"> Choose file... </label>
-                    <input id="upload-file" type="file" style="display: none" class="input-excel" />
+                <div class="template">
+                    <div class="mr-3">
+                        <a href='./template.xlsx' download>Download a Template<br> from here</a>
+                    </div>
+                    <div>
+                        <label for="upload-file" class="btn btn-info"> Choose file... </label>
+                        <input id="upload-file" type="file" style="display: none" class="input-excel" />
+                    </div>
                 </div>
             </div>
             <div class='displayRates'>
-                          <table class="table">
-                                <thead>
-                                  <tr>
-                                    <th scope="col">Agency Job Title</th>
-                                    <th scope="col">Standard Job Title</th>
-                                    <th scope="col" class='city'>city</th>
-                                  </tr>
-                                </thead>
-                                <tbody class='tableBody'>
-                                </tbody>
-                              </table>
+                    <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Work Location</th>
+                                    <th scope="col">Annual Hours</th>
+                                    <th scope="col">Overhead Factor</th>
+                                    <th scope="col">Profit Margin(%)</th>
+                                </tr>
+                            </thead>
+                            <tbody class='tableBodyOfProfitMargin'>
+                            </tbody>
+                        </table>
             </div>
             <div class='profitMargin'>
-                    <div class="mb-5">
-                            <h4 style='color: lightblue;'>Profit Margin</h4>
-                            <p>Upload the rates for the job titles.</p>
-                        </div>
-                    <table class="table">
-                          <thead>
+                <div class="mb-5">
+                    <h4 style='color: #144D7F;'>RATES</h4>
+                    <p>Upload the rates for the job titles.</p>
+                </div>
+                <table class="table">
+                        <thead>
                             <tr>
-                              <th scope="col">Work Location</th>
-                              <th scope="col">Annual Hours</th>
-                              <th scope="col">Overhead Factor</th>
-                              <th scope="col">Profit Margin(%)</th>
+                                <th scope="col">Agency Job Title</th>
+                                <th scope="col">Standard Job Title</th>
+                                <th scope="col" class='city'>city</th>
                             </tr>
-                          </thead>
-                          <tbody class='tableBodyOfProfitMargin'>
-                          </tbody>
+                        </thead>
+                        <tbody class='tableBody'>
+                        </tbody>
+                    </table>
+            </div>
+            <div class='Bonus'>
+                    <div class="mb-5">
+                        <h4 style='color: #144D7F;'>Bonus</h4>
+                        <p>Upload the rates for the job titles.</p>
+                    </div>
+                    <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Working Location</th>
+                                    <th scope="col">Bonus Percentage</th>
+                                    <th scope="col" class='city'>Malus Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody class='bonusBody'>
+                            </tbody>
                         </table>
-      </div>
+                </div>
         </div>
     </main>
 </body>

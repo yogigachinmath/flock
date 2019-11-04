@@ -1,6 +1,8 @@
 $('.input-excel').change(function(e) {
   var reader = new FileReader();
   reader.readAsArrayBuffer(e.target.files[0]);
+  const formData = new FormData();
+  formData.append('file', e.target.files[0]);
   reader.onload = function(e) {
     var data = new Uint8Array(reader.result);
     var arr = new Array();
@@ -16,12 +18,13 @@ $('.input-excel').change(function(e) {
       let worksheet = workbook.Sheets[first_sheet_name];
       let sheetData = XLSX.utils.sheet_to_json(worksheet, { raw: true });
       sheetArr.push(sheetData);
-      // fetch(`http://localhost:4000/ans`,{
-      //     method:'post',
-      //     body:JSON.stringify(XLSX.utils.sheet_to_json(worksheet,{raw:true})),
-      //     headers:{'Content-Type': 'application/json'}
-      // })
     }
+    // console.log(formData);
+    fetch(`http://localhost:4000/ans`, {
+      method: 'post',
+      body: formData
+    }).then(val => console.log(val));
+
     const rateSheet = sheetArr[0];
     $('.city').html(`${rateSheet[5].__EMPTY_6}<br>${rateSheet[5].AED}`);
     console.log(rateSheet[5].__EMPTY_6);
@@ -43,8 +46,18 @@ $('.input-excel').change(function(e) {
             <td>${profitSheet[i].__EMPTY_5}</td></tr>`;
       $('.tableBodyOfProfitMargin').append(rawHtml);
     }
-
+    const bonusSheet = sheetArr[2];
+    console.log(bonusSheet);
+    for (let i = 1; i < bonusSheet.length; i++) {
+      let rawHtml = `<tr><td>${bonusSheet[i].__EMPTY_1}</td>
+              <td>${bonusSheet[i].__EMPTY_3}</td>
+              <td>${bonusSheet[i].__EMPTY_4}</td></tr>`;
+      $('.bonusBody').append(rawHtml);
+    }
     $('.profitMargin').css({
+      display: 'block'
+    });
+    $('.Bonus').css({
       display: 'block'
     });
     // console.log(profitSheet);
