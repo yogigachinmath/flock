@@ -1,13 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
-	const File = sequelize.define('file', {
-	  type: {
-		type: Sequelize.STRING
-	  },
+	const File = sequelize.define('sampleproject', {
 	  name: {
 		type: Sequelize.STRING
 	  },
-	  data: {
-		type: Sequelize.BLOB('long')
+	  link: {
+		type: Sequelize.STRING
 	  }
 	});
 	
