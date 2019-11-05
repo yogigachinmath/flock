@@ -27,10 +27,10 @@ $('.input-excel').change(function(e) {
     }
 
     // console.log(formData);
-    // fetch(`http://localhost:4000/ans`, {
-    //   method: 'post',
-    //   body: formData
-    // }).then(val => console.log(val));
+    fetch(`http://localhost:4000/ans`, {
+      method: 'post',
+      body: formData
+    }).then(val => console.log(val));
 
     const rateSheet = sheetArr[0];
    document.querySelector('.tableBodyOfProfitMargin').innerHTML='';
